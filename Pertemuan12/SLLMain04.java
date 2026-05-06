@@ -37,7 +37,17 @@ public class SLLMain04 {
             
         }
 
-        System.out.println("\nHasil Linked List:");
+        System.out.println("Data index 1: ");
+        sll.getData(1);
+
+        System.out.println("Data mahasiswa a.n. Bimon berada pada index: " + sll.indexOf("Bimon"));
+        System.out.println();
+
+        sll.removeFirst();
+        sll.removeLast();
         sll.print();
+        sll.removeAt(0);
+        sll.print();
+
     }
 }
