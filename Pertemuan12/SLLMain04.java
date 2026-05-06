@@ -1,30 +1,43 @@
 package Pertemuan12;
 
+import java.util.Scanner;
+
 public class SLLMain04 {
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
         SingleLinkedList04 sll = new SingleLinkedList04();
 
         sll.print();
-        
-        Mahasiswa04 m1 = new Mahasiswa04("001", "Ayu", "TI-1A", 3.5);
-        Mahasiswa04 m2 = new Mahasiswa04("002", "Budi", "TI-1B", 3.7);
-        Mahasiswa04 m3 = new Mahasiswa04("003", "Citra", "TI-1C", 3.8);
-        Mahasiswa04 m4 = new Mahasiswa04("004", "Doni", "TI-1D", 3.6);
 
-        System.out.println("Tambah First:");
-        sll.addFirst(m1);
-        sll.print();
+        System.out.print("Masukkan jumlah data: ");
+        int n = sc.nextInt();
+        sc.nextLine(); 
 
-        System.out.println("Tambah Last:");
-        sll.addLast(m2);
-        sll.print();
+        for (int i = 0; i < n; i++) {
+            System.out.println("\nData ke-" + (i + 1));
 
-        System.out.println("Insert After:");
-        sll.insertAfter("001", m3);
-        sll.print();
+            System.out.print("NIM   : ");
+            String nim = sc.nextLine();
 
-        System.out.println("Tambah Index:");
-        sll.insertArt(1, m4);
+            System.out.print("Nama  : ");
+            String nama = sc.nextLine();
+
+            System.out.print("Kelas : ");
+            String kelas = sc.nextLine();
+
+            System.out.print("IPK   : ");
+            double ipk = sc.nextDouble();
+            sc.nextLine(); 
+
+            Mahasiswa04 mhs = new Mahasiswa04(nim, nama, kelas, ipk);
+
+            
+            sll.addLast(mhs); 
+            
+        }
+
+        System.out.println("\nHasil Linked List:");
         sll.print();
     }
 }
